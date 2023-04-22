@@ -1,0 +1,12 @@
+.button {
+    margin-left: 400px;
+}
+.gen{
+    margin-right: 5px;
+}
+.error{
+    color:red;
+}
+.container{
+    border-width: 100px;
+}

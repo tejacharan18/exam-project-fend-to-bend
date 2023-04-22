@@ -1,0 +1,27 @@
+.button {
+    margin-left: 400px;
+}
+.gen{
+    margin-right: 5px;
+}
+.error{
+    color:red;
+}
+.container{
+    border-width: 100px;
+}
+table, th, td {
+    border: 2px solid rgb(62, 125, 241);
+    border-collapse: collapse;
+    font-weight: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  table{
+    margin-left:200px;
+  }
+  td{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 5px;  
+    padding-bottom: 5px;
+  }

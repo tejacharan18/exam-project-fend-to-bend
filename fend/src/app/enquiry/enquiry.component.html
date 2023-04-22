@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+  
+</head>
+<body>
+  <div class='container'>
+    <div class='panel panel-primary dialog-panel'>
+      <div class='panel-heading'>
+        <h5 style="text-align: center;font-size: 30px;">STUDENT</h5>
+      </div>
+      <div class='panel-body'>
+        <form  #r=ngForm class='form-horizontal' role='form' >
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='std_id' placeholder="Enter Your ID">STUDENT ID</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="std_id" [(ngModel)]="User.std_id" [value]="a[0]"  >
+
+            
+
+              
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <div class='col-md-offset-6 col-md-6'>
+                <button class='btn-lg btn-warning' type='submit' (click)="Read()">GET</button>
+              </div>
+          </div>
+
+
+
+
+          
+
+
+
+<div *ngIf="canShowData">
+<table >
+  <tr>
+    <th colspan="10" style="text-align: center;"><h4>STUDENT DETAILS</h4></th>
+  </tr>
+  <tr>
+    <td colspan="4">STUDENT ID</td>
+    <td colspan="6">{{User.std_id}}</td>
+  </tr>
+  <tr>
+    <td colspan="4">COLLEGE CODE</td>
+    <td colspan="6">{{User.clg_code}}</td>
+  </tr>
+  <tr>
+    <td colspan="4">DEPARTMENT CODE</td>
+    <td colspan="6">{{User.dept_code}}</td>
+  </tr> <tr>
+    <td colspan="4">STUDENT NAME</td>
+    <td colspan="6">{{User.std_name}}</td>
+  </tr> <tr>
+    <td colspan="4">GENDER ID</td>
+    <td colspan="6">{{User .gender}}</td>
+  </tr> <tr>
+    <td colspan="4">Date of Birth </td>
+    <td colspan="6">{{User.dob}}</td>
+  </tr> <tr>
+    <td colspan="4">EMAIL</td>
+    <td colspan="6">{{User.email}}</td>
+  </tr> <tr>
+    <td colspan="4">PHONE NUMBER</td>
+    <td colspan="6">{{User.std_ph_num}}</td>
+  </tr> <tr>
+    <td colspan="4">FATHER PHONE NUMBER</td>
+    <td colspan="6">{{User.std_ft_num}}</td>
+  </tr> <tr>
+    <td colspan="4">JOIN YEAR</td>
+    <td colspan="6">{{User.join_year}}</td>
+  </tr> <tr>
+    <td colspan="4">DOOR NO</td>
+    <td colspan="6">{{User.dr_no}}</td>
+  </tr> <tr>
+    <td colspan="4"> STREET NAME</td>
+    <td colspan="6">{{User.std_street}}</td>
+  </tr> <tr>
+    <td colspan="4">CITY</td>
+    <td colspan="6">{{User.std_city}}</td>
+  </tr> <tr>
+    <td colspan="4"> PINCODE</td>
+    <td colspan="6">{{User.pincode}}</td>
+  </tr> <tr>
+    <td colspan="4">DISTRICT</td>
+    <td colspan="6">{{User.district}}</td>
+  </tr><tr>
+    <td colspan="4">STATE</td>
+    <td colspan="6">{{User.state}}</td>
+  </tr>
+</table>
+
+
+
+
+
+
+</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

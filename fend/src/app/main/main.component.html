@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<head>
+  
+</head>
+<body>
+  <div class='container'>
+    <div class='panel panel-primary dialog-panel'>
+      <div class='panel-heading'>
+        <h5 style="text-align: center;font-size: 30px;">STUDENT</h5>
+      </div>
+      <div class='panel-body'>
+        <form  #r=ngForm class='form-horizontal' role='form'  >
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='std_id' placeholder="Enter Your ID">STUDENT ID</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="std_id" [(ngModel)]="User.std_id"  required >
+
+             
+              
+            </div>
+          </div>
+           <div class='form-group'>
+            <div class='col-md-offset-5 col-md-4'>
+                <button class='btn-lg btn-warning' type='submit' (click)="Read()">GET</button>
+              </div>
+          </div>
+    <div *ngIf="clicked">
+<div *ngIf="!(a.length!=0 && retrive)">
+  ** no results to show
+</div>
+</div>
+<div *ngIf="canShow">
+<div *ngIf="a.length!=0 && retrive">
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='clg_code'>COLLEGE CODE</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="clg_code" [(ngModel)]="User.clg_code"  required>
+
+              <div *ngIf="r.controls['clg_code']?.['touched'] && r.controls['clg_code']?.['errors']" class="error">
+                <div *ngIf="r.controls['clg_code']?.['errors']?.['required']">
+                  College code  is required**
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+       
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='dept_code'>DEPARTMENT CODE</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="dept_code" [(ngModel)]="User.dept_code"  required>
+
+              <div *ngIf="r.controls['dept_code']?.['touched'] && r.controls['dept_code']?.['errors']" class="error">
+                <div *ngIf="r.controls['dept_code']?.['errors']?.['required']">
+                  Department code  is required**
+                </div>
+              </div>
+
+
+              
+            </div>
+          </div> 
+
+          <div class='form-group'>
+            <label style="text-align: left;" style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='std_name'>STUDENT NAME</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="std_name"  [(ngModel)]="User.std_name"  required>
+
+              <div *ngIf="r.controls['std_name']?.['touched'] && r.controls['std_name']?.['errors']" class="error">
+                <div *ngIf="r.controls['std_name']?.['errors']?.['required']">
+                  Enter your Name**
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>GENDER</label>
+            <div class='col-md-2'>
+              <input class="gen" type="radio" value="male" name="gender" [(ngModel)]="User.gender"  >Male
+              <input class="gen" type="radio" value="female" name="gender"[(ngModel)]="User.gender" >Female              
+            </div>
+          </div>
+          
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>Date of Birth</label>
+            <div class='col-md-4'>
+              <input type="date" class='form-control' id='id_accomodation' name="dob"[(ngModel)]="User.dob" >
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='email'>EMAIL</label>
+            <div class='col-md-4'>
+              <input type="email" class='form-control' id='id_accomodation' name="email"   [(ngModel)]="User.email"  email required>
+
+              <div *ngIf="r.controls['email']?.['touched'] && r.controls['email']?.['errors']" class="error" >
+                <div *ngIf="r.controls['email']?.['errors']?.['required']">
+                  Email is required**
+                </div>
+                <div *ngIf="r.controls['email']?.['errors']?.['email']">
+                  InValid Email**
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>CREATE PASSWORD</label>
+            <div class='col-md-4'>
+              <input type="password" class='form-control' id='id_accomodation' name="password"   [(ngModel)]="User.password"required minlength="8"  disabled>
+
+              <div *ngIf="r.controls['password']?.['touched'] && r.controls['password']?.['errors']" class="error" >
+                <div *ngIf="r.controls['password']?.['errors']?.['required']">
+                  password is required**
+                </div>
+                <div *ngIf="r.controls['password']?.['errors']?.['minlength']">
+                password must contain minimum 8 characters**
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='cpassword'>CONFIRM PASSWORD</label>
+            <div class='col-md-4'>
+              <input type="password" class='form-control' id='id_accomodation' name="cpassword"   [(ngModel)]="User.cpassword" required  disabled>
+
+              <div *ngIf="r.controls['cpassword']?.['touched'] && r.controls['password']?.['value'] !=r.controls['cpassword']?.['value']" class="error" >
+                confirm password must match with password**
+                </div>
+
+            </div>
+          </div>
+        
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='std_ph_num'>PHONE NUMBER</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="std_ph_num"[(ngModel)]="User.std_ph_num" required  minlength="10" >
+
+              <div *ngIf="r.controls['std_ph_num']?.['touched'] && r.controls['std_ph_num']?.['errors']" class="error" >
+                <div *ngIf="r.controls['std_ph_num']?.['errors']?.['required']">
+                  phoneNumber is required**
+                </div>
+                <div *ngIf="r.controls['std_ph_num']?.['errors']?.['minlength']">
+                Enter valid phoneNumber**
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class='form-group'> 
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='std_ft_num'> FATHER PHONE NUMBER</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="std_ft_num"  [(ngModel)]="User.std_ft_num" required minlength="10"  >
+
+              <div *ngIf="r.controls['std_ft_num']?.['touched'] && r.controls['std_ft_num']?.['errors']" class="error" >
+                <div *ngIf="r.controls['std_ft_num']?.['errors']?.['required']">
+                  phoneNumber is required**
+                </div>
+                <div *ngIf="r.controls['std_ft_num']?.['errors']?.['minlength']">
+                Enter valid phoneNumber**
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>JOIN YEAR</label>
+            <div class='col-md-4'>
+              
+              <select class='form-control' id='id_accomodation' name="join_year" [(ngModel)]="User.join_year" >
+                <option disabled>Year</option>
+                <option></option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2023</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>DOOR NO</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="dr_no"[(ngModel)]="User.dr_no" >
+
+
+
+            </div>
+          </div>
+          
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='id_accomodation'> STREET NAME</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="std_street"[(ngModel)]="User.std_street" >
+
+              
+
+
+
+            </div>  
+          </div>
+          
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='id_accomodation' > CITY</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation'name="std_city"  [(ngModel)]="User.std_city"  required>
+
+              <div *ngIf="r.controls['std_city']?.['touched'] && r.controls['std_city']?.['errors']" class="error">
+                <div *ngIf="r.controls['std_city']?.['errors']?.['required']">
+                  City is required**
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='id_accomodation' > PINCODE</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="pincode" [(ngModel)]="User.pincode" required minlength="6" >
+
+              <div *ngIf="r.controls['pincode']?.['touched'] && r.controls['pincode']?.['errors']" class="error" >
+                <div *ngIf="r.controls['pincode']?.['errors']?.['required']">
+                  Pincode is required**
+                </div>
+                <div *ngIf="r.controls['pincode']?.['errors']?.['minlength']">
+                Enter valid Pincode**
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='id_accomodation'> DISTRICT</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="district" [(ngModel)]="User.district"  required>
+
+              <div *ngIf="r.controls['district']?.['touched'] && r.controls['district']?.['errors']" class="error">
+                <div *ngIf="r.controls['district']?.['errors']?.['required']">
+                  District is required**
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label style="text-align: left;" class='control-label col-md-2 col-md-offset-2' for='state'> STATE</label>
+            <div class='col-md-4'>
+              <input type="text" class='form-control' id='id_accomodation' name="state"  [(ngModel)]="User.state"  required>
+
+              <div *ngIf="r.controls['state']?.['touched'] && r.controls['state']?.['errors']" class="error">
+                <div *ngIf="r.controls['state']?.['errors']?.['required']">
+                  State is required**
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+
+
+          <div class='form-group'>
+            <div class=' button col-md-offset-2 col-md-1'>
+              <button class='btn-lg btn-primary' type='submit' (click)="Update()">UPDATE</button>
+            </div>
+             <div class='col-md-offset-1 col-md-2'>
+              <button class='btn-lg btn-warning' type='reset' (click)="Insert()" >CANCEL</button>
+            </div>
+            
+           
+          </div>
+          </div>
+    </div>
+        </form>
+          <div class="alert alert-success my-2" *ngIf="!(SuccessMsg =='')">{{SuccessMsg}}</div>
+          <div class="alert alert-danger my-2" *ngIf="!(ErrorMsg =='')">{{ErrorMsg}}</div>
+        
+      </div>
+    </div>
+  </div>
+</body>
